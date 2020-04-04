@@ -12,7 +12,7 @@ drop tablespace zy_data including contents and datafiles;
 
 create temporary tablespace zy_temp tempfile 'D:\ORACLE\workspace\zy_temp.dbf'  size 100m reuse autoextend on next 20m maxsize unlimited;
 --创建数据表空间
-create tablespace zy_data datafile 'D:\ORACLE\workspace\zy_data.dbf' size 200 autoextend on next 200M maxsize 600m;
+create tablespace zy_data datafile 'D:\ORACLE\workspace\zy_data.dbf' size 100m autoextend on next 200M maxsize 600m;
 --创建用户并指定表空间
 create user zy identified by zy default tablespace zy_data temporary tablespace zy_temp quota unlimited on zy_data;
 --给用户授予权限
