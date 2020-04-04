@@ -3,6 +3,7 @@ package com.example.demo.user.controller;
 import com.example.demo.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -23,8 +24,10 @@ public class UserController {
     UserService userService;
 
     @RequestMapping("/findUser")
-    public String findUser(){
-       return "user";
+    public String findUser(@RequestParam("userName")String userName,@RequestParam("psw")String passWord){
+        System.out.println(userName);
+        System.out.println(passWord);
+        return "user";
     }
 
 }
