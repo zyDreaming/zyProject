@@ -1,1 +1,35 @@
-helloWorld!
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>用户登陆</title>
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/htmleaf-demo.css">
+	<link href="/css/signin.css" rel="stylesheet">
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>用户登录</h1>
+		</header>
+		<div class="signin">
+			<div class="signin-head"><img src="/images/test/tghlx.jpg" width="90px" alt="" class="img-circle"></div>
+			<form class="form-signin" role="form">
+				<input type="text" class="form-control" placeholder="用户名" required autofocus />
+				<input type="password" class="form-control" placeholder="密码" required />
+				<button class="btn btn-lg btn-warning btn-block" onclick="f()" >登录</button>
+				<label class="checkbox">
+					<input type="checkbox" value="remember-me"> 记住我
+				</label>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+    function f() {
+        alert("hello");
+    }
+</script>
+</html>
