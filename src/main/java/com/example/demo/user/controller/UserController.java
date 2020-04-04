@@ -1,9 +1,11 @@
 package com.example.demo.user.controller;
 
 import com.example.demo.user.service.UserService;
+import jdk.nashorn.api.scripting.NashornScriptEngineFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -24,10 +26,13 @@ public class UserController {
     UserService userService;
 
     @RequestMapping("/findUser")
-    public String findUser(@RequestParam("userName")String userName,@RequestParam("psw")String passWord){
-        System.out.println(userName);
-        System.out.println(passWord);
-        return "user";
+    @ResponseBody
+    public String findUser(String name,String possword){
+
+        String username = name;
+        String pwd = possword;
+
+        return name+possword;
     }
 
 }
