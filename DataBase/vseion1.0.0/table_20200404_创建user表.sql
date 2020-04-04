@@ -6,7 +6,7 @@ create table SYS_USER
    USERID               VARCHAR2(32)         not null,
    LOGINNAME            VARCHAR2(30),
    PASSWD               VARCHAR2(32),
-   USERNAME             VARCHAR2(100)
+   USERNAME             VARCHAR2(100),
    constraint PK_SYS_USER primary key (USERID)
 )
 
