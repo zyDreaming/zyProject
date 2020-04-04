@@ -1,5 +1,7 @@
 package com.example.demo.user.entity;
 
+import org.springframework.stereotype.Repository;
+
 /**
  * <p>Title: xAMS </p>
  * Description: <br>
@@ -10,6 +12,42 @@ package com.example.demo.user.entity;
  * @version 4.0.0.0
  * @date 2020-04-04
  */
+@Repository
 public class User {
+    private String userid;
+    private String loginname;
+    private String passwd;
+    private String username;
 
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public String getLoginname() {
+        return loginname;
+    }
+
+    public void setLoginname(String loginname) {
+        this.loginname = loginname;
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }
