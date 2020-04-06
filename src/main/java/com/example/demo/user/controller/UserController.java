@@ -1,12 +1,14 @@
 package com.example.demo.user.controller;
 
+import com.example.demo.user.entity.User;
 import com.example.demo.user.service.UserService;
-import jdk.nashorn.api.scripting.NashornScriptEngineFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * <p>Title: xAMS </p>
@@ -19,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2020-04-03
  */
 @RestController
-@RequestMapping("/User")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -27,12 +29,14 @@ public class UserController {
 
     @RequestMapping("/findUser")
     @ResponseBody
-    public String findUser(String name,String possword){
+    public List<User> findUser(@RequestParam("userName")String userName, @RequestParam("psw")String passWord){
 
-        String username = name;
-        String pwd = possword;
-
-        return name+possword;
+        String username = userName;
+        String pwd = passWord;
+        List<User> userList = userService.findAll();
+        List<String> nameList = userService.findAllBySql();
+        System.out.println(userList);
+        return userList;
     }
 
 }

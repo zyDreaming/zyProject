@@ -1,6 +1,6 @@
 package com.example.demo.user.entity;
 
-import org.springframework.stereotype.Repository;
+import javax.persistence.*;
 
 /**
  * <p>Title: xAMS </p>
@@ -12,18 +12,25 @@ import org.springframework.stereotype.Repository;
  * @version 4.0.0.0
  * @date 2020-04-04
  */
-@Repository
+@Entity
+@Table(name = "SYS_USER")
 public class User {
-    private String userid;
+    @Id
+    @Column(name = "USERID")
+    @GeneratedValue
+    private Integer userid;
+    @Column(name = "LOGINNAME")
     private String loginname;
+    @Column(name = "PASSWD")
     private String passwd;
+    @Column(name = "USERNAME")
     private String username;
 
-    public String getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(String userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
@@ -49,5 +56,15 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userid='" + userid + '\'' +
+                ", loginname='" + loginname + '\'' +
+                ", passwd='" + passwd + '\'' +
+                ", username='" + username + '\'' +
+                '}';
     }
 }
