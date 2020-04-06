@@ -1,2 +1,2 @@
 delete from SYS_USER;
-INSERT INTO loginname  (USERID, LOGINNAME,PASSWD,USERNAME) VALUES ('admin', 'admin','123','admin');
+INSERT INTO SYS_USER  (USERID, LOGINNAME,PASSWD,USERNAME) VALUES ('admin', 'admin','123','admin');
